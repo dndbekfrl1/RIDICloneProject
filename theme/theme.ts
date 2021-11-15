@@ -15,7 +15,6 @@ const palette = {
   export const theme = {
     colors: {
       background: palette.white,
-      white:palette.white,
       text:palette.slate_gray,
       primary: palette.dodger_blue,
       success: palette.green,
