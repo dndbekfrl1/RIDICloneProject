@@ -2,13 +2,13 @@ import React from "react";
 import styled from 'styled-components';
 import { theme } from "../theme/theme";
 import Button from "./Button";
+import Logo from "./Logo";
 
 const HeaderBlock =styled.header`
-    
     width: 100%;
+
     .wrapper{
-        height: 6em;
-        padding:0 2em;
+        padding:${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
         background:${theme.colors.primary};
     }
 
@@ -24,12 +24,22 @@ const HeaderBlock =styled.header`
     .my-util_wrapper{
         display: flex;
         align-items: center;
+        justify-content: start;
         color: ${theme.colors.white};
+        
+        font-weight: bold;
     }
     .menu_wrapper{
         display: flex;
+        padding:${theme.spacing.m}rem ${theme.spacing.xxl}rem ;
         align-items: center;
+        border-bottom: 1px solid black;
     }
+`
+
+const InputBlock = styled.input`
+    width: 12rem;
+    padding: .5rem 1rem;
 `
 const Header = ()=>{
 return (
@@ -38,10 +48,9 @@ return (
         <div className="util_wrapper">
             <div className="util">
                 <div>
-                    RIDIBOOKS <span>|</span>
-                    RIDISelect
+                    <Logo/> 
                 </div>
-                <input type="text" placeholder="제목, 저자, 출판사 검색" />
+                <InputBlock type="text" placeholder="제목, 저자, 출판사 검색" />
                 </div>
                 <div className="util">
                 <Button label="캐시충전" ></Button>
@@ -55,8 +64,6 @@ return (
             <li>마이리디</li>
         </ul>
         </div>
-
-       
         <ul className="menu_wrapper">
             <li>목록</li>
             <li>일반</li>

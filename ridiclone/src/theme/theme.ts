@@ -25,10 +25,11 @@ const palette = {
       notice:palette.brown,
     },
     spacing: {
-      s: 8,
-      m: 16,
-      l: 24,
-      xl: 40,
+      s: 0.5, //8
+      m: 1, //16
+      l: 1.5, //32
+      xl: 2.5, //40
+      xxl:6.875,
     },
     textVariants: {
       header: {
