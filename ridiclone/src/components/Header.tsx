@@ -6,7 +6,7 @@ import Logo from "./Logo";
 
 const HeaderBlock =styled.header`
     width: 100%;
-
+    height: fit-content;
     .wrapper{
         padding:${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
         background:${theme.colors.primary};

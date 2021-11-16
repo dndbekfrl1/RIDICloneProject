@@ -1,19 +1,22 @@
 import React from "react";
 import Header from "./Header";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 const TemplateBlock = styled.div`
     width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 `
     
 
 
-const Template=()=>(
+const Template=(props:any)=>(
     <TemplateBlock>
         <Header></Header>
+        {props.children}
+        <Footer></Footer>
     </TemplateBlock>
 )
 

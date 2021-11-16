@@ -1,6 +1,14 @@
 import React from "react";
+import Footer from "../Footer";
+import Header from "../Header";
+import Template from "../Template";
 
 const Main= ()=>(
-    <h1>this is main</h1>
+    <>
+        <Template>
+           jdslksjkl
+        </Template>
+        
+    </>
 )
 export default Main
