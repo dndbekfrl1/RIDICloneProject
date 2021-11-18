@@ -3,6 +3,7 @@ const palette = {
     dodger_blue:"#1f8ce6",
     slate_gray:"#212529",
     blue_gray:"#475161",
+    white_gray:"#f7fafc",
     dark_gray:"#596779",
     ligh_blue:"#c4d1de",
     scuba_blue:"#22b8cf",
@@ -11,7 +12,8 @@ const palette = {
     green:"#4fb303",
     dark_green:"#3fa590",
     brown:"#b0874a",
-    white:"#ffff"
+    white:"#ffff",
+    gray:"#E6E6E6"
   }
   
   export const theme = {
@@ -25,10 +27,20 @@ const palette = {
       failure: palette.red,
       notice:palette.brown,
       white:palette.white,
+      star:palette.orange,
+      white_gray:palette.white_gray,
       dark_gray:palette.dark_gray,
-      dark_green:palette.dark_green
+      dark_green:palette.dark_green,
+      gray:palette.gray,
+      red:palette.red
+    },
+    fontColor:{
+      black:"#333",
+      gray:"#666",
+      light_gray:"#999"
     },
     spacing: {
+      xs:0.25,//4
       s: 0.5, //8
       m: 1, //16
       l: 1.5, //32
@@ -40,6 +52,24 @@ const palette = {
       m:19,
       l:22,
     },
+    buttonSize: {
+      large: {
+        height: '1.5rem',
+        padding:"0.4rem 1.3rem",
+        fontSize: "13px"
+      },
+      medium: {
+        height: '1rem',
+        padding:"0.4rem 0.9rem",
+        fontSize: "13px"
+      },
+      small: {
+        height: '1rem',
+        padding:"0.35rem 0.7rem",
+        fontSize: "13px"
+      }
+    },
+    borderRadius:4,
     textVariants: {
       header: {
         fontFamily: 'Raleway',
