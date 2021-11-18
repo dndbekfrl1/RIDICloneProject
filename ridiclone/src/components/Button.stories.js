@@ -11,8 +11,7 @@ const Template = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  size: "normal",
+  size: "medium",
   label: "버튼",
-  btn_color: theme.colors.primary,
-  point_color: "white",
+  btn_color: "white",
 };
