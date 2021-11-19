@@ -4,19 +4,22 @@ import styled from "styled-components"
 import Button from "./Button";
 
 const CellBlock = styled.div`
-    width: 400px;
+    width: 100%;
     padding: 0 ${theme.spacing.s}rem;
     border-top: 1px solid ${theme.colors.gray};
     border-bottom:  1px solid ${theme.colors.gray};
     :hover{
         background: ${theme.colors.white_gray};
     }
+    &.selected{
+        background: ${theme.colors.light_blue};
+    }
 
     .cell-wrapper{
         display: table;
         vertical-align: middle;
         width: 100%;
-        height: 3rem;
+        height: 2.5rem;
 
         .checkbox{
             vertical-align: middle;
@@ -33,10 +36,10 @@ const CellBlock = styled.div`
                 color:${theme.colors.white};
                 width: fit-content;
                 border-radius:${theme.borderRadius}px;
-                font-size: ${theme.fontSize.s}px;
+                font-size: ${theme.fontSize.xs}px;
             }
             .title{
-                font-size:${theme.fontSize.s}px;
+                font-size:${theme.fontSize.xs}px;
                 color:${theme.fontColor.black};
                 font-weight: bold;
             }
@@ -51,13 +54,13 @@ const CellBlock = styled.div`
 type SeriesCellProps = {
     title: string;
     isFree:boolean;
+    isSelected:"selected"|"";
 }
 
-const SeriesCell = ({title,isFree}:SeriesCellProps)=>{
-    const [isSelected, setIsSelected] = useState(false);
+const SeriesCell = ({title,isFree,isSelected}:SeriesCellProps)=>{
 
     return(
-    <CellBlock> 
+    <CellBlock className={isSelected} > 
         <div className="cell-wrapper">
             <div className="checkbox">
                 <input type="checkbox"/>

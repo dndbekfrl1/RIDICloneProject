@@ -10,8 +10,8 @@ const TemplateBlock = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border:2px solid tomato;
     .container{
+        border: 2px solid tomato;
         padding: 0 ${theme.spacing.xxl}rem ;
     }
 `

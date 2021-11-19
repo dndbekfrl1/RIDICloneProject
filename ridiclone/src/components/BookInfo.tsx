@@ -3,60 +3,11 @@ import styled from "styled-components"
 import {ReactComponent as Stars} from "../assets/icon/stars.svg"
 import { theme } from "../theme/theme";
 import Button from "../components/Button"
+import BookType from "../type/booktype";
 
-interface Representative{
-    name:string,
-    thumnail:string,
-}
-
-interface Author{
-    name:string,
-    awards?:string[],
-    representatives?:Representative[],
-    introduction?:string,
-}
-
-interface Translator{
-    name:string,
-    nationality:string,
-    career?:string,
-    representatives?:Representative[],
-    introduction?:string
-}
-
-interface StarRate{
-    rate:number,
-    rateNum:number,
-    rateBuyerNum:number,
-}
-
-interface Book{
-    id:number,
-    thumbnail:string,
-    type?:string,
-    category?:string[],
-    title:string,
-    author:Author,
-    translator:Translator,
-    publisher:string,
-    starRate:StarRate,
-    rentalPrice?:number,
-    rentalSalePercent?:number,
-    buyPrice:number,
-    buySalePercent?:number,
-    count:number,
-    freeCount?:number,
-    isFinished?:boolean,
-    canRent?:boolean,
-    waitFree?:boolean,
-    xRated?:boolean,
-    description:string,
-    index:string,
-    lastlyRead:string,
-}
 
 const BookInfoBlock = styled.div`
-    width:400px;
+    width: 100%;
     display:flex;
     color:${theme.fontColor.gray};
     font-size:${theme.fontSize.s}px;
@@ -103,11 +54,14 @@ const BookInfoBlock = styled.div`
             }
         }
     }
-
 `
 
+type BookInfoProps = {
+    book:BookType
+}
 
-const BookInfo = (book:Book)=>{ 
+
+const BookInfo = ({book}:BookInfoProps)=>{ 
     const starRatingFill = book.starRate.rate*10;
     return(
     <BookInfoBlock>
@@ -115,7 +69,7 @@ const BookInfo = (book:Book)=>{
             <div className="thumnail">
                 <img src={book.thumbnail}/>
             </div>
-            <Button label="미리보기" size="medium"/>
+            <Button label="미리보기" btn_color="blue" size="medium"/>
         </div>
         <div className="bookinfo-wrapper">
             <div className="">{book.type}</div>

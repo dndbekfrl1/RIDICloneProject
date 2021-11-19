@@ -1,11 +1,12 @@
 //https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow
 const palette = {
     dodger_blue:"#1f8ce6",
+    light_blue:"#ebf6ff",
     slate_gray:"#212529",
     blue_gray:"#475161",
     white_gray:"#f7fafc",
     dark_gray:"#596779",
-    ligh_blue:"#c4d1de",
+    ligh_blue:"#ebf6ff",
     scuba_blue:"#22b8cf",
     red:"#e64937",
     orange:"#fa5300",
@@ -32,7 +33,8 @@ const palette = {
       dark_gray:palette.dark_gray,
       dark_green:palette.dark_green,
       gray:palette.gray,
-      red:palette.red
+      red:palette.red,
+      light_blue:palette.ligh_blue,
     },
     fontColor:{
       black:"#333",
@@ -45,9 +47,10 @@ const palette = {
       m: 1, //16
       l: 1.5, //32
       xl: 2.5, //40
-      xxl:6.875,
+      xxl:15.625,//200
     },
     fontSize:{
+      xs:9,
       s:13,
       m:19,
       l:22,
@@ -65,8 +68,8 @@ const palette = {
       },
       small: {
         height: '1rem',
-        padding:"0.35rem 0.7rem",
-        fontSize: "13px"
+        padding:"0.25rem 0.65rem",
+        fontSize: "9px"
       }
     },
     borderRadius:4,
