@@ -14,7 +14,8 @@ const palette = {
     dark_green:"#3fa590",
     brown:"#b0874a",
     white:"#ffff",
-    gray:"#E6E6E6"
+    gray:"#E6E6E6",
+    mid_gray:"#d1d5d9"
   }
   
   export const theme = {
@@ -29,6 +30,7 @@ const palette = {
       notice:palette.brown,
       white:palette.white,
       star:palette.orange,
+      border:palette.mid_gray,
       white_gray:palette.white_gray,
       dark_gray:palette.dark_gray,
       dark_green:palette.dark_green,

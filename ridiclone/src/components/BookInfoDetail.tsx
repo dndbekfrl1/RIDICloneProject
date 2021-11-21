@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { theme } from "../theme/theme";
 
 const BookInfoDetailBlock = styled.div`
+    margin: ${theme.spacing.xl}rem 0;
     .title{
         border-bottom: 2px solid ${theme.colors.dark_gray};
     }
