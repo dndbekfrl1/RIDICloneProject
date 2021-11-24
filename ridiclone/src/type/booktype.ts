@@ -1,12 +1,12 @@
-interface Representative{
-    name:string,
-    thumnail:string,
-}
+// interface Representative{
+//     name:string,
+//     thumnail:string,
+// }
 
 interface Author{
     name:string,
     awards?:string[],
-    representatives?:Representative[],
+    representatives?:string[],
     introduction?:string,
 }
 
@@ -14,7 +14,7 @@ interface Translator{
     name:string,
     nationality:string,
     career?:string,
-    representatives?:Representative[],
+    representatives?:string[],
     introduction?:string
 }
 

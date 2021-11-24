@@ -2,6 +2,12 @@
   font-family: "Pretendard";
   src: url(../src/assets/Pretendard-Regular.otf);
 }
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .App {
   font-family: "Pretendard";
 

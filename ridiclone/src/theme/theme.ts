@@ -49,7 +49,7 @@ const palette = {
       m: 1, //16
       l: 1.5, //32
       xl: 2.5, //40
-      xxl:15.625,//200
+      xxl:6.5,//200
     },
     fontSize:{
       xs:9,

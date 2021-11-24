@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../theme/theme";
 
@@ -9,7 +10,9 @@ const LogoBlock = styled.div`
 `
 
 const Logo = ()=>(
-    <LogoBlock>RIDIBOOKS</LogoBlock>
+    <Link to="/">
+        <LogoBlock>RIDIBOOKS</LogoBlock>
+    </Link>
 )
 
 export default Logo;
