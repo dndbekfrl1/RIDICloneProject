@@ -7,6 +7,7 @@ import Button from "../Button";
 
 const WrapperBlock = styled.div`
     display: flex;
+    margin: ${theme.spacing.m}rem 0;
 `
 
 const CartBlock = styled.div`
@@ -24,6 +25,7 @@ const CartPage = ()=>{
     return(
         <>
         <Template>
+            <h3>카트</h3>
             <WrapperBlock>
                     <CartBlock>
                         <CartTab/>

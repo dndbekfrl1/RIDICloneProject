@@ -4,8 +4,12 @@ import { theme } from "../theme/theme";
 
 const BookInfoDetailBlock = styled.div`
     margin: ${theme.spacing.xl}rem 0;
+    color: ${theme.fontColor.black};
+    font-size: ${theme.fontSize.s}px;
     .title{
-        border-bottom: 2px solid ${theme.colors.dark_gray};
+        font-size: ${theme.fontSize.m}px;
+        color:${theme.fontColor.gray};
+        border-bottom: 2px solid ${theme.colors.gray};
     }
 `
 

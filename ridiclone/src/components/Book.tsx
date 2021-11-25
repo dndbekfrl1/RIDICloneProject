@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../theme/theme";
 
@@ -52,20 +53,23 @@ type BookProps ={
 }
 
 const Book = ({id,thumnail,canRent,type,category,title,author,starRate,buySalePercent}:BookProps)=>(
-    <BookBlock>
-        {canRent && <div className="rent">대여</div>}
-        <div className="thumnail">
-            <img src={thumnail}/>
-        </div>
-        <div className="book_info">
-            <h3 className="title">
-                {title}
-            </h3>
-            <p className="author">
-                {author}
-            </p>
-        </div>
-    </BookBlock>
+    <Link to={`books/${id}`}>
+        <BookBlock>
+            {canRent && <div className="rent">대여</div>}
+            <div className="thumnail">
+                <img src={thumnail}/>
+            </div>
+            <div className="book_info">
+                <h3 className="title">
+                    {title}
+                </h3>
+                <p className="author">
+                    {author}
+                </p>
+            </div>
+        </BookBlock>
+    </Link>
+
 )
 
 Book.defaultProps={

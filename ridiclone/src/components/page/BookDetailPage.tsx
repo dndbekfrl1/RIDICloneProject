@@ -26,13 +26,13 @@ const BookInfoPageBlok = styled.div`
         }
     }
 `
-
+//FIXME postid number??
 interface MatchParams {
     postId: string;
   };
 
 const BookDetailPage = ({match}:RouteComponentProps<MatchParams>)=>{
-  console.log("match",match)
+//   console.log("match",match)
     let {id}:any = match.params;
   id = Number(id);
   const book:any = BOOK_DATA.find((d)=>id===d.id);

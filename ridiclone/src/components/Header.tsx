@@ -35,8 +35,8 @@ const HeaderBlock =styled.header`
     }
     .my-util_wrapper{
         display: flex;
+        min-width: 300px;
         width: 40%;
-        border: 1px solid;
         align-items: center;
         justify-content: space-between;
         color: ${theme.colors.white};
@@ -44,10 +44,17 @@ const HeaderBlock =styled.header`
         font-weight: bold;
     }
     .menu_wrapper{
-        display: flex;
+        color: ${theme.fontColor.black};
+        width: 100%;
         padding:${theme.spacing.m}rem ${theme.spacing.xxl}rem ;
         align-items: center;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid ${theme.colors.gray};
+        ul{
+            width: 30%;
+            min-width: 350px;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 `
 
@@ -73,19 +80,25 @@ return (
         </div>
         <ul className="my-util_wrapper">
             <li className="my-menu"><Link to="/"><Home width={16} fill={theme.colors.white}/>홈 </Link></li>
-            <li className="my-menu"><Alert width={16} fill={theme.colors.white}/>알림</li>
+            <li className="my-menu">
+                <Link to="/notification">
+                <Alert width={16} fill={theme.colors.white}/>알림
+                </Link>
+            </li>
             <li className="my-menu"><Link to="/cart"><Cart width={16} fill={theme.colors.white}/>카트</Link></li>
-            <li className="my-menu"><MyRidi width={16} fill={theme.colors.white}/>마이리디</li>
+            <li className="my-menu"><Link to="/myridi"><MyRidi width={16} fill={theme.colors.white}/>마이리디</Link></li>
         </ul>
         </div>
-        <ul className="menu_wrapper">
-            <li>목록</li>
-            <li>일반</li>
-            <li>로맨스</li>
-            <li>판타지</li>
-            <li>만화</li>
-            <li>BL</li>
-        </ul>
+        <div className="menu_wrapper">
+            <ul >
+                <li>목록</li>
+                <li>일반</li>
+                <li>로맨스</li>
+                <li>판타지</li>
+                <li>만화</li>
+                <li>BL</li>
+            </ul>
+        </div>
         
     </HeaderBlock>
     );}

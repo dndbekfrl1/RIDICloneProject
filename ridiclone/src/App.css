@@ -3,6 +3,12 @@
   src: url(../src/assets/Pretendard-Regular.otf);
 }
 
+html,*{
+  /* box-sizing: border-box; */
+  padding: 0;
+  margin: 0;
+}
+
 a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
@@ -17,7 +23,7 @@ input{
   border-radius: 2px;
 }
 
-ul,li{
+ul,li,h3,button{
   padding: 0;
   margin: 0;
 }
@@ -25,14 +31,5 @@ li{
   list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
