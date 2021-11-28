@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import BookType from "../type/booktype"
+import BookType from "../type/book_type"
 import Book from "./Book";
 
 const BookCellBlock = styled.div`

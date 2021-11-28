@@ -3,7 +3,7 @@ import styled from "styled-components"
 import {ReactComponent as Stars} from "../assets/icon/stars.svg"
 import { theme } from "../theme/theme";
 import Button from "../components/Button"
-import BookType from "../type/booktype";
+import BookType from "../type/book_type";
 
 
 const BookInfoBlock = styled.div`

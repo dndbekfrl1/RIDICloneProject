@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import styled from "styled-components"
 import { theme } from "../theme/theme";
-import BookType from "../type/booktype";
+import BookType from "../type/book_type";
 import CartList from "./CartList";
 import CART_DATA from "../data/CART_DATA.json";
 

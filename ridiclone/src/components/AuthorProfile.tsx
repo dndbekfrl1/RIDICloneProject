@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../theme/theme";
-import BookType from "../type/booktype";
+import BookType from "../type/book_type";
 import Button from "./Button";
 import "../App.css";
 

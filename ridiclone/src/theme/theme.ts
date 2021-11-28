@@ -15,7 +15,10 @@ const palette = {
     brown:"#b0874a",
     white:"#ffff",
     gray:"#E6E6E6",
-    mid_gray:"#d1d5d9"
+    mid_gray:"#d1d5d9",
+    light_purple:"#e3e0ee",
+    purple:"#6863b3",
+    mid_blue:"#cce8ff",
   }
   
   export const theme = {
@@ -37,6 +40,10 @@ const palette = {
       gray:palette.gray,
       red:palette.red,
       light_blue:palette.ligh_blue,
+      notification_notice_bg:palette.mid_blue,
+      notification_notice_font:palette.dodger_blue,
+      notification_event_bg:palette.light_purple,
+      notification_event_font:palette.purple,
     },
     fontColor:{
       black:"#333",

@@ -4,7 +4,7 @@ import BOOK_DATA from "../../data/BOOK_DATA.json"
 import Template from "../Template";
 import styled from "styled-components";
 import BookInfo from "../BookInfo";
-import BookType from "../../type/booktype";
+import BookType from "../../type/book_type";
 import SeriesList from "../SeriesList";
 import { theme } from "../../theme/theme";
 import BookInfoDetail from "../BookInfoDetail";
