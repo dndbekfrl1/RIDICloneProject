@@ -19,10 +19,7 @@ const AuthorDetailPage = ({match}:RouteComponentProps<MatchParams>)=>{
     const {name} = match.params;
     const books = getAuthorBooks(name);
     const {author} = books[0];
-
-    console.log(books)
-
-
+    console.log(author);
     return(
     <Template>
         <PersonProfile author={author}/>

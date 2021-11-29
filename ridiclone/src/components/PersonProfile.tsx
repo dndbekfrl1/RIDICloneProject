@@ -50,7 +50,7 @@ const PersonProfileBlock=styled.div`
 `
 
 type PersonProfileProps = {
-    author : BookType["author"],
+    author : BookType["author"]|BookType["translator"],
 };
 
 const PersonProfile= ({author}:PersonProfileProps)=>{
@@ -58,11 +58,18 @@ const PersonProfile= ({author}:PersonProfileProps)=>{
         <h3 className="name">{author.name}</h3>
         <Button label="작가 신간알림 소식" btn_color="blue" size="medium"/>
         <div className="author_info_wrapper">
-            <p className="author_info">수상 
-             <div>
-                {author.awards?.map(award => (<p>{award}</p>))}
-            </div>
-            </p>
+            {"awards" in author? (
+                <p className="author_info">수상 
+                <div>
+                    {author.awards?.map(award => (<p>{award}</p>))}
+                </div>
+                </p>
+            ):("")}
+            {"nationality" in author? (
+                <p className="author_info">국적
+                    <div>{author.nationality}</div>
+                </p>
+            ):("")}
         </div>
 
         <hr/>

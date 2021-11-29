@@ -2,17 +2,27 @@ import React from "react";
 import styled from "styled-components"
 import Logo from "../Logo";
 import RENT_DATA from "../../data/RENT_DATA.json"
+import Template from "../Template";
+import LibraryBookList from "../LibraryBookList";
 const LibraryPageBlock = styled.div`
  width: 100vw;
     min-width: 900px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    nav{
+        ul{
+            display: flex;
+        }
+    }
 `
 
 
 const LibraryPage=()=>{
     return(
+        <Template>
+
         <LibraryPageBlock>
             <header>
                 <div>
@@ -29,10 +39,12 @@ const LibraryPage=()=>{
             </header>
 
             <div>
-
+                <LibraryBookList books={RENT_DATA}/>
             </div>
-            <footer>footer</footer>
+
         </LibraryPageBlock>
+        </Template>
+
     )
 }
 export default LibraryPage

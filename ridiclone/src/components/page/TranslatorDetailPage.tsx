@@ -17,7 +17,7 @@ const TranslatorDetailPage = ({match}:RouteComponentProps<MatchParams>)=>{
     const {name} = match.params;
     const books=getTranslatorBooks(name);
     const {translator} = books[0];
-
+    
  return(
     <Template>
         <PersonProfile author={translator}/>
