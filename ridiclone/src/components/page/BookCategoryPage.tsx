@@ -3,6 +3,7 @@ import BOOK_DATA from "../../data/BOOK_DATA.json";
 import styled from "styled-components";
 import Template from "../Template";
 import { theme } from "../../theme/theme";
+import BookCuration from "../BookCuration";
 
 const BooksIndexBlock = styled.div`
     .category_wrapper{
@@ -23,7 +24,8 @@ const BooksIndexBlock = styled.div`
     }
 `
 
-type FantasyPageProps={
+type BookCategoryPageProps={
+    category:"romance"| "fantasy"| "humanities"| "thriller"| "detective"| "society"| "history"| "sf",
     isEbook:boolean
 }
 
@@ -31,7 +33,7 @@ const getBooks = (type:string,category:string)=>{
     return BOOK_DATA.filter((book)=>book.type===type && book.category.includes(category));
 }
 
-const FantasyPage = ({isEbook}:FantasyPageProps)=>{
+const BookCategoryPage = ({category,isEbook}:BookCategoryPageProps)=>{
     const [menuIndex,setMenuIndex] = useState<number>(0);
     const changeMenu = (menuIndex:number)=>{
         setMenuIndex(menuIndex);
@@ -40,7 +42,7 @@ const FantasyPage = ({isEbook}:FantasyPageProps)=>{
         0:"novel",
         1:"ebook"
     }
-    const books = getBooks(menuList[menuIndex],"romance");
+    const books = getBooks(menuList[menuIndex],category);
     console.log(books);
 
     return(
@@ -54,9 +56,10 @@ const FantasyPage = ({isEbook}:FantasyPageProps)=>{
             {isEbook&&(
                 <h1>어 이북이야</h1>
             )}
+            <BookCuration header="리디 기다리면 무료 ﹥" books={books}/>
             </BooksIndexBlock>
         </Template>
     )
 }
 
-export default FantasyPage;
+export default BookCategoryPage;

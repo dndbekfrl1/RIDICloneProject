@@ -12,21 +12,26 @@ const TemplateBlock = styled.div`
     flex-direction: column;
     .container{
         padding: ${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
+        min-height: 300px;
         h3{
             margin: ${theme.spacing.m}rem 0;
             font-size: ${theme.fontSize.s}px;
         }
     }
+   
 `
 
-const Template=(props:any)=>(
-    <TemplateBlock>
-        <Header></Header>
-        <div className="container">
-            {props.children}
-        </div>
-        <Footer></Footer>
-    </TemplateBlock>
-)
+const Template=(props:any)=>{
+
+    return(
+        <TemplateBlock>
+            {/* <Header ></Header> */}
+            <div className="container">
+                {props.children}
+            </div>
+            <Footer></Footer>
+        </TemplateBlock>
+    )       
+}
 
 export default Template;

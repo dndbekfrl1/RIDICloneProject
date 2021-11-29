@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 import styled from 'styled-components';
 import { theme } from "../theme/theme";
 import Button from "./Button";
@@ -8,7 +8,7 @@ import {ReactComponent as Alert} from "../assets/icon/alarm.svg";
 import {ReactComponent as Cart} from "../assets/icon/cart.svg";
 import {ReactComponent as MyRidi} from "../assets/icon/person.svg";
 import { Link } from "react-router-dom";
-import CartPage from "./page/CartPage";
+import Categories from "./Categories";
 
 const HeaderBlock =styled.header`
     width: 100%;
@@ -62,7 +62,16 @@ const InputBlock = styled.input`
     width: 12rem;
     padding: .5rem 1rem;
 `
-const Header = ()=>{
+type categoryType = "일반"|"로맨스"|"판타지"| "만화"|"BL";
+
+type CategoriesProps={
+    onSelect:(category:categoryType)=>void,
+    category:categoryType
+}
+
+
+const Header = ({onSelect,category}:CategoriesProps)=>{
+  
 return (
     <HeaderBlock>
         <div className="wrapper">
@@ -89,7 +98,7 @@ return (
             <li className="my-menu"><Link to="/myridi"><MyRidi width={16} fill={theme.colors.white}/>마이리디</Link></li>
         </ul>
         </div>
-        <div className="menu_wrapper">
+        {/* <div className="menu_wrapper">
             <ul >
                 <li>목록</li>
                 <li><Link to="/">일반</Link></li>
@@ -98,7 +107,8 @@ return (
                 <li>만화</li>
                 <li>BL</li>
             </ul>
-        </div>
+        </div> */}
+        <Categories category={category} onSelect={onSelect}/>
         
     </HeaderBlock>
     );}

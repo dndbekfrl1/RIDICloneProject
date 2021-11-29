@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components"
 import Book from "./Book";
+import BookType from "../type/book_type";
 import { theme } from "../theme/theme";
 
 const CurationBlock = styled.div`
@@ -33,43 +34,41 @@ const CurationBlock = styled.div`
             display:flex;
             flex-direction: row;
             justify-content: space-between;
+            div{
+                margin: 0 ${theme.spacing.xs}rem;
+            }
         }
     }
-
-
 `
-
-interface Book{
-    id:number,
-    title:string,
-    author:string,
-    thumbnail:string,
-    rating?:number,
-    type?:string,
-    category?:string[],
-    starRate?:any,
-    canRent?:boolean,
-    buySalePercent?:number
-}
-
 type BookCurationProps={
     header:string,
-    books:Book[],
+    books:BookType[],
 }
 
-const BookCuration=({header,books}:BookCurationProps)=>(
-    <CurationBlock>
-        <h2 className="header">{header}</h2>
-        <div className="books_wrapper">
-            <button className="left">왼</button>
-            <div className="books">
-                {books.map(book=>
-                    <Book id={book.id} title={book.title} author={book.author} thumbnail={book.thumbnail} canRent={book.canRent} />
+const MaxBookNum = 5;
+
+const BookCuration=({header,books}:BookCurationProps)=>{
+
+    return(
+        <CurationBlock>
+            <h2 className="header">{header}</h2>
+            <div className="books_wrapper">
+                <button className="left">왼</button>
+                <div className="books">
+                    {books&&(
+                        books.map((b,i)=>{
+                            if(i<=MaxBookNum){
+                                return (<Book id={b.id} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
+                            }
+                        }
+                    )
                     )}
+                    
+                </div>
+                <button className="right">오</button>
             </div>
-            <button className="right">오</button>
-        </div>
-    </CurationBlock>
-)
+        </CurationBlock>
+    )
+}
 
 export default BookCuration

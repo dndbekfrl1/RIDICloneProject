@@ -4,7 +4,7 @@ import {theme} from "../theme/theme"
 
 const FooterBlock = styled.footer`  
     width: 100%;
-    height: 7rem;
+    height: 8rem;
     background: ${theme.colors.text};
 `
 
