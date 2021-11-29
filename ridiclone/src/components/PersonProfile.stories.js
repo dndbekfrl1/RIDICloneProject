@@ -1,12 +1,12 @@
 import React from "react";
-import AuthorProfile from "./AuthorProfile";
+import PersonProfile from "./PersonProfile";
 
 export default {
-  component: AuthorProfile,
-  title: "AuthorProfile",
+  component: PersonProfile,
+  title: "PersonProfile",
 };
 
-const Template = (args) => <AuthorProfile {...args} />;
+const Template = (args) => <PersonProfile {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

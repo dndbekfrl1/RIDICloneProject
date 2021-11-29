@@ -4,11 +4,13 @@ TODO
 * 책 Info -> 책 type별로 달라짐
 
 ## 작가 정보
+done
 
 ## 출판사 정보
 done
 
 ## 번역가 정보
+done
 
 ## 유저
 * 알림 목록 - done

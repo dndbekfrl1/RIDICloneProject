@@ -3,13 +3,12 @@ import { withRouter, RouteComponentProps } from "react-router";
 import queryString from 'query-string';
 import Template from "../Template";
 import SearchPublisher from "../SearchPublisher";
+import styled from "styled-components";
+
 
 interface MatchParams {
     query: string;
   };
-
-
-
   
 const SearchPage = ({location,match}:RouteComponentProps<MatchParams>) =>{
     const pathname = location.pathname.split("/").pop();

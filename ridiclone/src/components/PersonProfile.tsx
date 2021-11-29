@@ -19,7 +19,7 @@ import "../App.css";
  * 
  */
 
-const AuthorProfileBlock=styled.div`
+const PersonProfileBlock=styled.div`
     width: 600px;
     border: 10px solid ${theme.colors.gray};
     color: ${theme.fontColor.gray};
@@ -49,12 +49,12 @@ const AuthorProfileBlock=styled.div`
 
 `
 
-type AuthorProfileProps = {
+type PersonProfileProps = {
     author : BookType["author"],
 };
 
-const AuthorProfile= ({author}:AuthorProfileProps)=>{
-    return(<AuthorProfileBlock>
+const PersonProfile= ({author}:PersonProfileProps)=>{
+    return(<PersonProfileBlock>
         <h3 className="name">{author.name}</h3>
         <Button label="작가 신간알림 소식" btn_color="blue" size="medium"/>
         <div className="author_info_wrapper">
@@ -69,7 +69,7 @@ const AuthorProfile= ({author}:AuthorProfileProps)=>{
         <p>
             {author.introduction}
         </p>
-    </AuthorProfileBlock>);
+    </PersonProfileBlock>);
 }
 
-export default AuthorProfile;
+export default PersonProfile;

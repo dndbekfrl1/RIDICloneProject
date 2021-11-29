@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components"
+import { Link,Route } from "react-router-dom";
 import {ReactComponent as Stars} from "../assets/icon/stars.svg"
 import { theme } from "../theme/theme";
 import Button from "../components/Button"
 import BookType from "../type/book_type";
+import Main from "./page/Main";
 
 
 const BookInfoBlock = styled.div`
@@ -84,13 +86,15 @@ const BookInfo = ({book}:BookInfoProps)=>{
             </div>
             <div className="metadata-wrapper">
                 <div className="author">
-                    <b>{book.author.name}</b> 저
+                    <Link to={`/author/${book.author.name}`}><b>{book.author.name}</b></Link> 저
                 </div>
-                <div className="translator">
-                    <b>{book.translator.name}</b>
-                </div>
+                {book.translator &&(
+                    <div className="translator">
+                    <Link to={`/translator/${book.translator.name}`} > <b>{book.translator.name}</b></Link>역
+                    </div>
+                )}
                 <div className="publisher">
-                    <b>{book.publisher}</b> 출판
+                    <Link to={`/search/publisher?q=${book.publisher}`}><b>{book.publisher}</b></Link> 출판
                 </div>
             </div>
         </div>

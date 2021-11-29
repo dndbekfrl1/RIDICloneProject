@@ -53,7 +53,7 @@ type BookProps ={
 }
 
 const Book = ({id,thumbnail,canRent,type,category,title,author,starRate,buySalePercent}:BookProps)=>(
-    // <Link to={`books/${id}`}>
+    <Link to={`/books/${id}`}>
         <BookBlock>
             {canRent && <div className="rent">대여</div>}
             <div className="thumbnail">
@@ -70,7 +70,7 @@ const Book = ({id,thumbnail,canRent,type,category,title,author,starRate,buySaleP
                 </div>
             )}
         </BookBlock>
-    // </Link>
+    </Link>
 
 )
 

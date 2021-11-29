@@ -12,6 +12,10 @@ const TemplateBlock = styled.div`
     flex-direction: column;
     .container{
         padding: ${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
+        h3{
+            margin: ${theme.spacing.m}rem 0;
+            font-size: ${theme.fontSize.s}px;
+        }
     }
 `
 

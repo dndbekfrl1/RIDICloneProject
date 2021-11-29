@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 import { theme } from "../theme/theme";
 
 const CartCellBlock = styled.div`
@@ -103,9 +104,12 @@ const CartCell = ({bookInfo}:CartCellProps)=>{
                     <input type="checkbox" checked={true}/>
                 </div>
                 
-                <div className="thumnail">
-                    <img src={bookInfo.thumbnail}/>
-                </div>
+                <Link to={`/books/${bookInfo.id}`}>
+                    <div className="thumnail">
+                        <img src={bookInfo.thumbnail}/>
+                    </div>
+                </Link>
+
                 <div className="book-info-wrapper">
                         <h3 className="book_title">{bookInfo.title}</h3>
                         <div className="book_author_name">{bookInfo.author.name}</div>

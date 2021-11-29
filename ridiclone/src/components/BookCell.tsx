@@ -12,10 +12,11 @@ const BookCellBlock = styled.div`
         padding: 0;
     }
     &.full{
+        width: 100%;
         font-size: ${theme.fontSize.s}px;
         color: ${theme.fontColor.light_gray};
         display: flex;
-        border-bottom: 1px solid ${theme.colors.dark_gray};
+        border-bottom: 1px solid ${theme.colors.gray};
         padding: 0 0 ${theme.spacing.m}rem 0;
         div{
             margin: 0  ${theme.spacing.s}rem 0 0;
