@@ -14,7 +14,7 @@ const HeaderBlock =styled.header`
     width: 100%;
     height: fit-content;
     .wrapper{
-        padding:${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
+        padding:${theme.spacing.m}rem ${theme.spacing.xxl}rem ;
         background:${theme.colors.primary};
     }
 
@@ -22,8 +22,11 @@ const HeaderBlock =styled.header`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+        margin-bottom: ${theme.spacing.m}rem;
        
+        div{
+            margin-right: ${theme.spacing.m}rem;
+        }
         .util{
             display: flex;
             align-items: center;
@@ -32,6 +35,10 @@ const HeaderBlock =styled.header`
     .my-menu{
         display: flex;
         align-items: center;
+        a{
+            display: flex;
+            align-items: center;
+        }
     }
     .my-util_wrapper{
         display: flex;
@@ -88,26 +95,16 @@ return (
             </div>
         </div>
         <ul className="my-util_wrapper">
-            <li className="my-menu"><Link to="/"><Home width={16} fill={theme.colors.white}/>홈 </Link></li>
+            <li className="my-menu"><Link to="/"><Home width={16} fill={theme.colors.white}/><span>홈</span> </Link></li>
             <li className="my-menu">
                 <Link to="/notification">
-                <Alert width={16} fill={theme.colors.white}/>알림
+                <Alert width={16} fill={theme.colors.white}/><span>알림</span>
                 </Link>
             </li>
-            <li className="my-menu"><Link to="/cart"><Cart width={16} fill={theme.colors.white}/>카트</Link></li>
-            <li className="my-menu"><Link to="/myridi"><MyRidi width={16} fill={theme.colors.white}/>마이리디</Link></li>
+            <li className="my-menu"><Link to="/cart"><Cart width={16} fill={theme.colors.white}/><span>카트</span></Link></li>
+            <li className="my-menu"><Link to="/myridi"><MyRidi width={16} fill={theme.colors.white}/><span>마이리디</span></Link></li>
         </ul>
         </div>
-        {/* <div className="menu_wrapper">
-            <ul >
-                <li>목록</li>
-                <li><Link to="/">일반</Link></li>
-                <li><Link to="/romance-serial">로맨스</Link></li>
-                <li><Link to="/fantasy-serial">판타지</Link></li>
-                <li>만화</li>
-                <li>BL</li>
-            </ul>
-        </div> */}
         <Categories category={category} onSelect={onSelect}/>
         
     </HeaderBlock>

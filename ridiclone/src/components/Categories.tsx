@@ -30,10 +30,7 @@ type CategoriesProps={
 }
 
 const Categories = ({onSelect, category}:CategoriesProps)=>{
-    const [categoryIndex,setCategoryIndex] = useState<number>(0);
-    const changeCategory = (categoryIndex:number)=>{
-        setCategoryIndex(categoryIndex);
-    }
+
     const categoryList:{name:categoryType,path:string}[]=[
         {name:"일반",path:"/"},
         {name:"로맨스",path:"/romance-serial"},

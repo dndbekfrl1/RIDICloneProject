@@ -10,8 +10,6 @@ import AuthorDetailPage from './components/page/AuthorDetailPage';
 import NotificationPage from './components/page/NotificationPage';
 import MyRidiPage from './components/page/MyRidiPage';
 import SearchPage from './components/page/SearchPage';
-import RomnacePage from './components/page/RomancePage';
-import FantasyPage from './components/page/FantasyPage';
 import BookCategoryPage from './components/page/BookCategoryPage';
 import TranslatorDetailPage from './components/page/TranslatorDetailPage';
 
@@ -21,7 +19,6 @@ function App() {
     type categoryType = "일반"|"로맨스"|"판타지"| "만화"|"BL";
     const [category, setCategory] = useState<categoryType>("일반");
     const onSelect = (category:categoryType)=>(setCategory(category));
-    console.log("App, category",category);
   return (
     <div className="App">
       <Header category={category} onSelect={onSelect}/>

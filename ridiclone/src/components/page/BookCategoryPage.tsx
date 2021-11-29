@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Template from "../Template";
 import { theme } from "../../theme/theme";
 import BookCuration from "../BookCuration";
+import EventList from "../EventList";
 
 const BooksIndexBlock = styled.div`
     .category_wrapper{
@@ -56,6 +57,7 @@ const BookCategoryPage = ({category,isEbook}:BookCategoryPageProps)=>{
             {isEbook&&(
                 <h1>어 이북이야</h1>
             )}
+            <EventList/>
             <BookCuration header="리디 기다리면 무료 ﹥" books={books}/>
             </BooksIndexBlock>
         </Template>
