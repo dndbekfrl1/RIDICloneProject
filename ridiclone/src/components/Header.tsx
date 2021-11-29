@@ -92,9 +92,9 @@ return (
         <div className="menu_wrapper">
             <ul >
                 <li>목록</li>
-                <li>일반</li>
-                <li>로맨스</li>
-                <li>판타지</li>
+                <li><Link to="/">일반</Link></li>
+                <li><Link to="/romance-serial">로맨스</Link></li>
+                <li><Link to="/fantasy-serial">판타지</Link></li>
                 <li>만화</li>
                 <li>BL</li>
             </ul>

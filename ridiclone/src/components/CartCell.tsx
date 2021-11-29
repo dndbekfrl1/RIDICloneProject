@@ -102,6 +102,7 @@ const CartCell = ({bookInfo}:CartCellProps)=>{
                 <div>
                     <input type="checkbox" checked={true}/>
                 </div>
+                
                 <div className="thumnail">
                     <img src={bookInfo.thumbnail}/>
                 </div>

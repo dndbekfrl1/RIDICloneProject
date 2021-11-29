@@ -43,3 +43,15 @@ Discount.args = {
   author: "Reeta Loukes",
   starRate: 4.5,
 };
+
+export const Cover = Template.bind({});
+Cover.args = {
+  buySalePercent: 41,
+  id: "1",
+  thumbnail: "https://i.esdrop.com/d/1o9bbwj5cf0u/WCUj8t3POh.jpg",
+  type: "webNovel",
+  category: ["sf", "detective"],
+  title: "Diabetes",
+  author: "Reeta Loukes",
+  starRate: 4.5,
+};
