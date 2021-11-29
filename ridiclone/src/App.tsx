@@ -12,6 +12,7 @@ import MyRidiPage from './components/page/MyRidiPage';
 import SearchPage from './components/page/SearchPage';
 import BookCategoryPage from './components/page/BookCategoryPage';
 import TranslatorDetailPage from './components/page/TranslatorDetailPage';
+import LibraryPage from './components/page/LibraryPage';
 
 
 
@@ -22,7 +23,6 @@ function App() {
   return (
     <div className="App">
       <Header category={category} onSelect={onSelect}/>
-
       <Route path="/" exact={true} component={Main}/>
       <Route path="/books/:id" exact={true} component={BookDetailPage}/>
       <Route path="/cart" exact={true} component={CartPage}/>
@@ -35,6 +35,7 @@ function App() {
       <Route path="/romance"render={() => <BookCategoryPage isEbook={true} category={"romance"} />}/> 
       <Route path="/fantasy-serial" render={() => <BookCategoryPage isEbook={false} category={"fantasy"} />}/>
       <Route path="/fantasy" render={() => <BookCategoryPage isEbook={true} category={"fantasy"} />}/>
+      <Route path="/library" component={LibraryPage}/>
     </div>
   );
 }

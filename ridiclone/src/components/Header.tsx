@@ -91,7 +91,10 @@ return (
                 </div>
                 <div className="util">
                 <Button label="캐시충전" size="medium" btn_color="blue" ></Button>
-                <Button label="내 서재" size="medium" btn_color="blue"></Button>
+                <Link to="/library">
+                    <Button label="내 서재" size="medium" btn_color="blue"/>
+                </Link>
+
             </div>
         </div>
         <ul className="my-util_wrapper">
