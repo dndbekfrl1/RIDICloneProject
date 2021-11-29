@@ -11,8 +11,6 @@ const TemplateBlock = styled.div`
     justify-content: center;
     flex-direction: column;
     .container{
-    border: 1px solid red;
-
         padding: ${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
     }
 `

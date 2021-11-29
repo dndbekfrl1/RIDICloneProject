@@ -43,7 +43,7 @@ interface Book{
     id:number,
     title:string,
     author:string,
-    thumnail:string,
+    thumbnail:string,
     rating?:number,
     type?:string,
     category?:string[],
@@ -64,7 +64,7 @@ const BookCuration=({header,books}:BookCurationProps)=>(
             <button className="left">왼</button>
             <div className="books">
                 {books.map(book=>
-                    <Book id={book.id} title={book.title} author={book.author} thumnail={book.thumnail} canRent={book.canRent} />
+                    <Book id={book.id} title={book.title} author={book.author} thumbnail={book.thumbnail} canRent={book.canRent} />
                     )}
             </div>
             <button className="right">오</button>

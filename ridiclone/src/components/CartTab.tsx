@@ -4,7 +4,7 @@ import { theme } from "../theme/theme";
 import BookType from "../type/book_type";
 import CartList from "./CartList";
 import CART_DATA from "../data/CART_DATA.json";
-
+import CartType from "../type/cart_type";
 
 const CartTabBlock = styled.div`
     /* width: 600px; */
@@ -42,7 +42,7 @@ const CartTabBlock = styled.div`
 
 const CartTab = ()=>{
 
-    const cartList:BookType[] = CART_DATA;
+    const cartList:CartType[] = CART_DATA;
 
     const canRentBooks = cartList.filter((book)=>book.canRent==true);
 

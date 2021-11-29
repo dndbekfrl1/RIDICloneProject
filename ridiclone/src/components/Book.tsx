@@ -20,7 +20,7 @@ const BookBlock = styled.div`
         justify-content: center;
         font-size: ${theme.fontSize.s}px;
     }
-    .thumnail{
+    .thumbnail{
         img{
             width: auto;
             max-height: 8rem;
@@ -42,33 +42,35 @@ const BookBlock = styled.div`
 `
 type BookProps ={
     id:number,
-    thumnail?:string,
+    thumbnail?:string,
     type?:string,
     category?:string[],
-    title:string,
-    author:any,
+    title?:string,
+    author?:any,
     starRate?:any,
     canRent?:boolean,
     buySalePercent?:number
 }
 
-const Book = ({id,thumnail,canRent,type,category,title,author,starRate,buySalePercent}:BookProps)=>(
-    <Link to={`books/${id}`}>
+const Book = ({id,thumbnail,canRent,type,category,title,author,starRate,buySalePercent}:BookProps)=>(
+    // <Link to={`books/${id}`}>
         <BookBlock>
             {canRent && <div className="rent">대여</div>}
-            <div className="thumnail">
-                <img src={thumnail}/>
+            <div className="thumbnail">
+                <img src={thumbnail}/>
             </div>
-            <div className="book_info">
-                <h3 className="title">
-                    {title}
-                </h3>
-                <p className="author">
-                    {author}
-                </p>
-            </div>
+            {title &&(
+                <div className="book_info">
+                    <h3 className="title">
+                        {title}
+                    </h3>
+                    <p className="author">
+                        {author}
+                    </p>
+                </div>
+            )}
         </BookBlock>
-    </Link>
+    // </Link>
 
 )
 

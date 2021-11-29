@@ -1,20 +1,17 @@
-interface Representative{
-    name:string,
-    thumbnail:string,
-}
 
 interface Author{
     name:string,
     awards?:string[],
-    representatives?:Representative[],
+    representatives?:string[],
+    representativesThumbnail:string,
     introduction?:string,
 }
 
 interface Translator{
     name:string,
     nationality:string,
-    career?:string|string[],
-    representatives?:{name:string, thumbnail:string}[],
+    career?:string,
+    representatives?:string[],
     introduction?:string
 }
 
@@ -24,7 +21,7 @@ interface StarRate{
     rateBuyerNum:number,
 }
 
-interface BookType{
+interface CartType{
     id:number,
     thumbnail:string,
     type?:string,
@@ -49,4 +46,4 @@ interface BookType{
     lastlyRead:string,
 }
 
-export default BookType;
+export default CartType;

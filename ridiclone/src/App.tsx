@@ -8,6 +8,7 @@ import CartPage from './components/page/CartPage';
 import AuthorDetail from './components/page/AuthorDetail';
 import NotificationPage from './components/page/NotificationPage';
 import MyRidiPage from './components/page/MyRidiPage';
+import SearchPage from './components/page/SearchPage';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       <Route path="/author/:name" exact={true} component={AuthorDetail}/>
       <Route path="/notification" exact={true} component={NotificationPage}/>
       <Route path="/myridi" exact={true} component={MyRidiPage}/>
+      {/* <Route path="/search/publisher" exact={true} component={SearchPage}/> */}
+      <Route path="/search" component={SearchPage}/>
     </div>
   );
 }
