@@ -25,7 +25,6 @@ const Template=(props:any)=>{
 
     return(
         <TemplateBlock>
-            {/* <Header ></Header> */}
             <div className="container">
                 {props.children}
             </div>

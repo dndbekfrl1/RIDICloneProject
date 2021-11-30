@@ -69,7 +69,7 @@ const InputBlock = styled.input`
     width: 12rem;
     padding: .5rem 1rem;
 `
-type categoryType = "일반"|"로맨스"|"판타지"| "만화"|"BL";
+type categoryType = "일반"|"로맨스"|"판타지";
 
 type CategoriesProps={
     onSelect:(category:categoryType)=>void,

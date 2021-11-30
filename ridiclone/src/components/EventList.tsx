@@ -8,6 +8,7 @@ import { theme } from "../theme/theme";
 const EventListBlock = styled.div`
     position: relative;
     ul{
+        overflow: hidden;
         margin: 0;
         padding: 0;
         display: flex;

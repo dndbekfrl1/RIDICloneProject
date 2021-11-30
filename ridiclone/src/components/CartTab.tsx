@@ -38,19 +38,16 @@ const CartTabBlock = styled.div`
         min-height: 400px;
     }
 `
+type CartTabProps = {
+    menuIndex:number,
+    onSelect:(index:number)=>void
+}
 
-
-const CartTab = ()=>{
+const CartTab = ({menuIndex,onSelect}:CartTabProps)=>{
 
     const cartList:CartType[] = CART_DATA;
-
     const canRentBooks = cartList.filter((book)=>book.canRent==true);
-
-    const[menuIndex,setMenuIndex] =useState<number>(0);
-    const changeMenu = (menuIndex:number)=>{
-        setMenuIndex(menuIndex);
-    }
-
+  
     const menuList:any = {
         0:<CartList books={cartList}/>,
         1:<CartList books={canRentBooks}/>
@@ -59,9 +56,9 @@ const CartTab = ()=>{
     return(
     <CartTabBlock>
         <ul className="">
-            <li className={`${menuIndex===0? 'active' : ''}`} onClick={()=>changeMenu(0)}>구매 가능
+            <li className={`${menuIndex===0? 'active' : ''}`} onClick={()=>onSelect(0)}>구매 가능
             </li>
-            <li className={`${menuIndex===1? 'active' : ''}`} onClick={()=>changeMenu(1)}>대여 가능</li>
+            <li className={`${menuIndex===1? 'active' : ''}`} onClick={()=>onSelect(1)}>대여 가능</li>
         </ul>
         
         <div className="books_wrapper">

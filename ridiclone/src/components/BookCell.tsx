@@ -56,12 +56,12 @@ const BookCell = ({type,book}:BookCellProps)=>{
     switch(type){
         case "normal":
             bookCell=<BookCellBlock>
-                <Book id={book.id} title={book.title} author={book.author.name}  thumbnail={book.thumbnail} />
+                <Book xRated={book.xRated} id={book.id} title={book.title} author={book.author.name}  thumbnail={book.thumbnail} />
             </BookCellBlock>
             break;
         case "full":
             bookCell=<BookCellBlock className={type}>
-                <Book id={book.id} thumbnail={book.thumbnail} />
+                <Book  xRated={book.xRated} id={book.id} thumbnail={book.thumbnail} />
                 <div>
                     <h3 className="title">{book.title}</h3>
                     <p className="author">{book.author.name}</p>

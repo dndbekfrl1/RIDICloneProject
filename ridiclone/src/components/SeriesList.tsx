@@ -33,13 +33,14 @@ type SeriesListProps = {
     title:string,
     count:number,//총 권 수
     freeCount:number,// 무료 권 수 
+    isNextFree?:boolean,// 기다무 +1
 }
 
-const SeriesList = ({title,count,freeCount}:SeriesListProps)=>{
+const SeriesList = ({title,count,freeCount,isNextFree}:SeriesListProps)=>{
     const serieslist=()=>{
         const result=[];
         for(let i=1;i<=count;i++){
-            const isFree=i<=freeCount? true:false;
+            const isFree=(i<=freeCount)? true:false;
             result.push(
             <SeriesCell title={title} isFree={isFree} isSelected="" />)
         }
@@ -72,6 +73,10 @@ const SeriesList = ({title,count,freeCount}:SeriesListProps)=>{
             {serieslist()}
         </SeriesListBlock>
     );
+}
+
+SeriesList.defaultProps = {
+    isNextFree:false
 }
 
 export default SeriesList;

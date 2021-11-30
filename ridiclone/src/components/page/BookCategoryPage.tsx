@@ -5,6 +5,7 @@ import Template from "../Template";
 import { theme } from "../../theme/theme";
 import BookCuration from "../BookCuration";
 import EventList from "../EventList";
+import BookType from "../../type/book_type";
 
 const BooksIndexBlock = styled.div`
     .category_wrapper{
@@ -34,6 +35,10 @@ const getBooks = (type:string,category:string)=>{
     return BOOK_DATA.filter((book)=>book.type===type && book.category.includes(category));
 }
 
+const getWaitFreeBooks = (books:BookType[])=>{
+    return books.filter((book)=>book.waitFree===true)
+}
+
 const BookCategoryPage = ({category,isEbook}:BookCategoryPageProps)=>{
     const [menuIndex,setMenuIndex] = useState<number>(0);
     const changeMenu = (menuIndex:number)=>{
@@ -44,7 +49,7 @@ const BookCategoryPage = ({category,isEbook}:BookCategoryPageProps)=>{
         1:"ebook"
     }
     const books = getBooks(menuList[menuIndex],category);
-    console.log(books);
+    const waitFreeBooks = getWaitFreeBooks(books);
 
     return(
         <Template>
@@ -54,11 +59,9 @@ const BookCategoryPage = ({category,isEbook}:BookCategoryPageProps)=>{
                 <span>|</span>
                 <li className={`${menuIndex===1? 'active' : ''}`} onClick={()=>changeMenu(1)}>e북</li>
             </ul>
-            {isEbook&&(
-                <h1>어 이북이야</h1>
-            )}
             <EventList/>
-            <BookCuration header="리디 기다리면 무료 ﹥" books={books}/>
+            <BookCuration header="book curation1" books={books}/>
+            <BookCuration header="리디 기다리면 무료 ﹥" books={waitFreeBooks}/>
             </BooksIndexBlock>
         </Template>
     )

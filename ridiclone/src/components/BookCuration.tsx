@@ -53,19 +53,19 @@ const BookCuration=({header,books}:BookCurationProps)=>{
         <CurationBlock>
             <h2 className="header">{header}</h2>
             <div className="books_wrapper">
-                <button className="left">왼</button>
+                <button className="left"> ﹤</button>
                 <div className="books">
                     {books&&(
                         books.map((b,i)=>{
                             if(i<=MaxBookNum){
-                                return (<Book id={b.id} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
+                                return (<Book waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
                             }
                         }
                     )
                     )}
                     
                 </div>
-                <button className="right">오</button>
+                <button className="right">﹥</button>
             </div>
         </CurationBlock>
     )

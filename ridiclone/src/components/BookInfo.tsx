@@ -6,6 +6,7 @@ import { theme } from "../theme/theme";
 import Button from "../components/Button"
 import BookType from "../type/book_type";
 import Main from "./page/Main";
+import Book from "./Book";
 
 
 const BookInfoBlock = styled.div`
@@ -71,7 +72,6 @@ const BookInfo = ({book}:BookInfoProps)=>{
             <div className="thumnail">
                 <img src={book.thumbnail}/>
             </div>
-            <Button label="미리보기" btn_color="blue" size="medium"/>
         </div>
         <div className="bookinfo-wrapper">
             <div className="">{book.type}</div>

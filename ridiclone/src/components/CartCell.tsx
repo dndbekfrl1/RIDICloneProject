@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import { theme } from "../theme/theme";
+import Book from "./Book";
 
 const CartCellBlock = styled.div`
     box-sizing: border-box;
@@ -87,7 +88,8 @@ type BookInfo = {
     },
     thumbnail:string,
     buyPrice:number,
-    buySalePercent?:number
+    buySalePercent?:number,
+    xRated?:boolean
 }
 
 type CartCellProps = {
@@ -105,9 +107,7 @@ const CartCell = ({bookInfo}:CartCellProps)=>{
                 </div>
                 
                 <Link to={`/books/${bookInfo.id}`}>
-                    <div className="thumnail">
-                        <img src={bookInfo.thumbnail}/>
-                    </div>
+                    <Book size="small" id={bookInfo.id} xRated={bookInfo.xRated} thumbnail={bookInfo.thumbnail} />
                 </Link>
 
                 <div className="book-info-wrapper">
