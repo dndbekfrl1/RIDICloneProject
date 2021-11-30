@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { theme } from "../../theme/theme";
 import {ReactComponent as Star} from "../../assets/icon/star.svg";
 import LibraryBookCell from "../LibraryBookCell";
+import BOOK_DATA from "../../data/BOOK_DATA.json";
 
 const BookDetailPageBlock = styled.div`
 header{
@@ -62,12 +63,12 @@ interface MatchParams {
 type Book={
     book:RentType
 } 
-const LibraryBookDetailPage = ({match,history,location}:RouteComponentProps<MatchParams>)=>{
-    const {id} = match.params;
-    console.log("history",history);
-    const {book}:any = location.state;
 
-    console.log("Book",book);
+
+const LibraryBookDetailPage = ({match,history,location}:RouteComponentProps<MatchParams>)=>{
+    const {book}:any = location.state;
+    const{id} = match.params;
+
     return(
             <BookDetailPageBlock>
                 <header>
@@ -83,7 +84,7 @@ const LibraryBookDetailPage = ({match,history,location}:RouteComponentProps<Matc
                             <div className="thumbnail">
                                 <img src={book.thumbnail} alt="" />
 
-                                <Link to={`/books/${book.id}`}>
+                                <Link to={`/books/${id}`}>
                                     <p>서점에서 보기</p>
                                 </Link>
                             </div>

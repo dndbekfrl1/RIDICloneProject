@@ -15,13 +15,14 @@ const getBooks = (type:string)=>{
 const Main= ()=>{
 
     const books = getBooks("novel");
-    console.log("books",books);
 
     return(
     <>
         <Template>
            <EventList/>
            <BookCuration header="Book Curation 1" books={books}/>
+           <BookCuration header="Book Curation 2" books={books} showStarRate={true}/>
+       
         </Template>
         
     </>

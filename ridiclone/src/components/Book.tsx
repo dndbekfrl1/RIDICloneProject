@@ -23,6 +23,22 @@ const BookBlock = styled.div<{size?:string}>`
         justify-content: center;
         font-size: ${theme.fontSize.s}px;
     }
+    .buySalePercent{
+        position:absolute;
+        top:-8px;
+        left:-8px;
+        width:2rem;
+        height:2rem;
+        background: ${theme.colors.dark_gray};
+        color:${theme.colors.white};
+        border-radius: 100%;
+        display: flex;
+        z-index:999;
+        align-items: center;
+        justify-content: center;
+        font-size: ${theme.fontSize.s}px;
+        z-index: 99;
+    }
     .rent{
         position:absolute;
         top:-8px;
@@ -135,6 +151,7 @@ const Book = ({id,waitFree,size,thumbnail,xRated,canRent,isExpired,title,author,
     <Link to={`/books/${id}`}>
         <BookBlock size={size} >
             {xRated && <div className="xRated"><b>19</b></div>}
+            {buySalePercent && <div className="buySalePercent">{buySalePercent}%</div>}
             {canRent && <div className="rent">대여</div>}
             {waitFree && <div className="waitFree"><Clock fill={theme.colors.white} width="14"/></div>}
             <div className="thumnail_wrapper">

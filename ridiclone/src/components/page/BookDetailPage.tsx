@@ -30,20 +30,12 @@ interface MatchParams {
     id: string;
   };
 
-const isValidFree=(lastlyRead:string)=>{
-    const lastyl_read=new Date(lastlyRead);
-    const today=new Date();
 
-    if(lastyl_read.valueOf()-today.valueOf()<=0)return true;
-    else return false;
-
-}
 
 const BookDetailPage = ({match}:RouteComponentProps<MatchParams>)=>{
     let {id}:any = match.params;
   id = Number(id);
   const book:any = BOOK_DATA.find((d)=>id===d.id);
-  const isNextFree:boolean = isValidFree(book.lastlyRead);
 
   return(
     <>

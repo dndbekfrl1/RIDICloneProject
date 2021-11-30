@@ -59,8 +59,8 @@ const BookCuration=({header,books,showStarRate}:BookCurationProps)=>{
                     {books&&(
                         books.map((b,i)=>{
                             if(i<=MaxBookNum){
-                                if(showStarRate) return (<Book starRate={b.starRate} waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
-                                else return (<Book waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
+                                if(showStarRate) return (<Book buySalePercent={b.buySalePercent} starRate={b.starRate} waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
+                                else return (<Book buySalePercent={b.buySalePercent} waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
                             }
                         }
                     )

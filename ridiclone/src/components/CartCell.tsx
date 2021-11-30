@@ -111,8 +111,12 @@ const CartCell = ({bookInfo}:CartCellProps)=>{
                 </Link>
 
                 <div className="book-info-wrapper">
-                        <h3 className="book_title">{bookInfo.title}</h3>
-                        <div className="book_author_name">{bookInfo.author.name}</div>
+                        <Link to={`/books/${bookInfo.id}`}>
+                            <h3 className="book_title">{bookInfo.title}</h3>
+                        </Link>
+                        <Link to={`/author/${bookInfo.author.name}`}>
+                            <div className="book_author_name">{bookInfo.author.name}</div>
+                        </Link>
                         <div className="button_wrapper">
                             <Button label="위시리스트로 이동" btn_color="white" size="small"/>
                             <Button label="삭제" btn_color="white" size="small"/>

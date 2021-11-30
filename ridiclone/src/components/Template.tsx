@@ -12,7 +12,7 @@ const TemplateBlock = styled.div`
     flex-direction: column;
     .container{
         padding: ${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
-        min-height: 300px;
+        min-height: 500px;
         h3{
             font-size: ${theme.fontSize.m}px;
         }
