@@ -14,8 +14,7 @@ const TemplateBlock = styled.div`
         padding: ${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
         min-height: 300px;
         h3{
-            margin: ${theme.spacing.m}rem 0;
-            font-size: ${theme.fontSize.s}px;
+            font-size: ${theme.fontSize.m}px;
         }
     }
    

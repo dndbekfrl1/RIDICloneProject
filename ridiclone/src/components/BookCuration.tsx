@@ -43,22 +43,24 @@ const CurationBlock = styled.div`
 type BookCurationProps={
     header:string,
     books:BookType[],
+    showStarRate?:boolean
 }
 
 const MaxBookNum = 5;
 
-const BookCuration=({header,books}:BookCurationProps)=>{
-
+const BookCuration=({header,books,showStarRate}:BookCurationProps)=>{
     return(
         <CurationBlock>
             <h2 className="header">{header}</h2>
             <div className="books_wrapper">
-                <button className="left"> ﹤</button>
+                <button className="left"> 
+                ﹤</button>
                 <div className="books">
                     {books&&(
                         books.map((b,i)=>{
                             if(i<=MaxBookNum){
-                                return (<Book waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
+                                if(showStarRate) return (<Book starRate={b.starRate} waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
+                                else return (<Book waitFree={b.waitFree} id={b.id} xRated={b.xRated} title={b.title} thumbnail={b.thumbnail} canRent={b.canRent}/>)
                             }
                         }
                     )
@@ -69,6 +71,10 @@ const BookCuration=({header,books}:BookCurationProps)=>{
             </div>
         </CurationBlock>
     )
+}
+
+BookCuration.defaultProps = {
+    showStarRate:false
 }
 
 export default BookCuration

@@ -60,8 +60,9 @@ const BookCategoryPage = ({category,isEbook}:BookCategoryPageProps)=>{
                 <li className={`${menuIndex===1? 'active' : ''}`} onClick={()=>changeMenu(1)}>e북</li>
             </ul>
             <EventList/>
-            <BookCuration header="book curation1" books={books}/>
+            <BookCuration header="Book Curation 1" books={books}/>
             <BookCuration header="리디 기다리면 무료 ﹥" books={waitFreeBooks}/>
+            <BookCuration header="Book Curation 2" books={books} showStarRate={true}/>
             </BooksIndexBlock>
         </Template>
     )

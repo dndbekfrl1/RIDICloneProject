@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../theme/theme";
 import {ReactComponent as Clock} from "../assets/icon/clock.svg"
+import {ReactComponent as Stars} from "../assets/icon/stars.svg"
 
 const BookBlock = styled.div<{size?:string}>`
     width: fit-content;
@@ -80,6 +81,23 @@ const BookBlock = styled.div<{size?:string}>`
         .author{
             font-size:${theme.fontSize.s}px;
         }
+
+        .starRating{
+            display:flex;
+            margin: ${theme.spacing.s}rem 0 ;
+            .starRating_Icon{
+                position: relative;
+                .starRatin_fill{
+                    position: absolute;
+                    left:0px;
+                    top:0px;
+                }
+            }
+            .rateNum{
+                font-size:${theme.fontSize.xs}px;
+                color:${theme.fontColor.gray};
+            }
+        }
     }
     h3,p{
         margin: 0;
@@ -95,7 +113,11 @@ type BookProps ={
     category?:string[],
     title?:string,
     author?:any,
-    starRate?:any,
+    starRate?:{    
+        rate:number,
+        rateNum:number,
+        rateBuyerNum:number
+    },
     canRent?:boolean,
     xRated?:boolean,
     buySalePercent?:number
@@ -103,7 +125,13 @@ type BookProps ={
     waitFree?:boolean
 }
 
-const Book = ({id,waitFree,size,thumbnail,xRated,canRent,isExpired,type,category,title,author,starRate,buySalePercent}:BookProps)=>(
+const Book = ({id,waitFree,size,thumbnail,xRated,canRent,isExpired,title,author,starRate,buySalePercent}:BookProps)=>{
+    let starRatingFill;
+    if(starRate){
+        starRatingFill= starRate?.rate*10;
+    }
+    
+    return (
     <Link to={`/books/${id}`}>
         <BookBlock size={size} >
             {xRated && <div className="xRated"><b>19</b></div>}
@@ -123,13 +151,21 @@ const Book = ({id,waitFree,size,thumbnail,xRated,canRent,isExpired,type,category
                     <p className="author">
                         {author}
                     </p>
+                    {starRate &&(
+                    <div className="starRating">
+                         <span className="starRating_Icon">
+                             <Stars className="starRatin_fill" height="10px" fill={theme.colors.star} viewBox={"0 0 "+ starRatingFill +" 10"} />
+                             <Stars fill={theme.colors.gray} height="10px" viewBox="0 0 50 10" />
+                         </span>
+                         <div className="rateNum">{starRate.rateNum}</div>
+                     </div>
+                    )}
                 </div>
             )}
         </BookBlock>
     </Link>
-
-)
-
+    )
+}
 Book.defaultProps={
     size:"normal",
     canRent:false,

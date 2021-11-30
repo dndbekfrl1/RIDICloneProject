@@ -21,7 +21,7 @@ const Main= ()=>{
     <>
         <Template>
            <EventList/>
-           <BookCuration header="리디 기다리면 무료 ﹥" books={books}/>
+           <BookCuration header="Book Curation 1" books={books}/>
         </Template>
         
     </>
