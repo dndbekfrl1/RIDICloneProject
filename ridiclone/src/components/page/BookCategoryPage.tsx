@@ -13,7 +13,9 @@ const BooksIndexBlock = styled.div`
         justify-content: center;
 
         li{
-        font-size: ${theme.fontSize.s}px;
+        font-size: ${theme.fontSize.m}px;
+        font-weight: bold;
+        margin: ${theme.spacing.s}rem ${theme.spacing.s}rem;
         cursor: pointer;
         }
         li.active{
@@ -56,7 +58,6 @@ const BookCategoryPage = ({category,isEbook}:BookCategoryPageProps)=>{
             <BooksIndexBlock>
             <ul className="category_wrapper">
                 <li className={`${menuIndex===0? 'active' : ''}`} onClick={()=>changeMenu(0)}>웹소설</li>
-                <span>|</span>
                 <li className={`${menuIndex===1? 'active' : ''}`} onClick={()=>changeMenu(1)}>e북</li>
             </ul>
             <EventList/>

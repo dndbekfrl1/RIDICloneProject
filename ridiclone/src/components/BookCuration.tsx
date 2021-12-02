@@ -7,9 +7,10 @@ import { theme } from "../theme/theme";
 const CurationBlock = styled.div`
     /* width:44rem; */
     width:100%;
+    margin: ${theme.spacing.xl}rem 0 ;
     .header{
         font-size:${theme.fontSize.m}px;
-        margin:${theme.spacing.m}rem 0;
+        margin:${theme.spacing.xl}rem 0;
     }
     .books_wrapper{
         position:relative;

@@ -11,6 +11,7 @@ const TemplateBlock = styled.div`
     justify-content: center;
     flex-direction: column;
     .container{
+        color: ${theme.fontColor.black};
         padding: ${theme.spacing.l}rem ${theme.spacing.xxl}rem ;
         min-height: 500px;
         h3{
